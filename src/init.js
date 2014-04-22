@@ -45,12 +45,16 @@ $(document).ready(function(){
       x += currentRadius;
       // slowly have stars animate to their correct spot
       // dancersSorted[i].setPosition(y, x);
-      var changeX = x - dancersSorted[i].left;
-      var changeY = y - dancersSorted[i].top;
+      console.log(dancersSorted[i].$node.position());
+      var changeX = x - dancersSorted[i].$node.position().left - dancersSorted[i].$node[0].clientTop;
+      var changeY = y - dancersSorted[i].$node.position().top - dancersSorted[i].$node[0].clientTop;
       dancersSorted[i].$node.animate({
         left: "+="+changeX,
         top: "+="+changeY
-      }, 10000, function(){});
+      }, 5000, function(){
+        // dancersSorted[i].left = x - changeX;
+        // dancersSorted[i].top = y - changeY;
+      });
       x += currentRadius + xSpacerSize;
 
     }
