@@ -2,18 +2,34 @@ $(document).ready(function(){
   window.dancers = [];
 
   $('.lineUp').on("click", function(event) {
-    // return if window.dancers.length === 0
+    // return if windowdancers.length === 0
+
+    window.dancers.sort(function(a, b) {
+      return b.$node[0].clientTop - a.$node[0].clientTop;
+    });
+
+    var dancersSorted = [];
+    var index = Math.floor(window.dancers.length/2);
+
+    for (var i = 0; i < window.dancers.length; i++){
+      if (i % 2 === 1) {
+        index -= i;
+      } else {
+        index += i;
+      }
+      dancersSorted[index] = window.dancers[i];
+    }
+
+    console.log(dancersSorted);
 
     var windowHeight = $("body").height();
     var windowWidth = $("body").width();
 
-    // var totalY = 0;
     var totalStarWidth = 0;
 
     var currentWidth;
     for (var i = 0; i < window.dancers.length; i++) {
       currentWidth = window.dancers[i].$node[0].clientTop * 2;
-      // if (currentWidth > totalY) totalY = currentWidth;
       totalStarWidth += currentWidth;
     }
 
@@ -22,12 +38,14 @@ $(document).ready(function(){
 
     var x = xSpacerSize;
 
+
     var currentRadius = 0;
-    for (var i = 0; i < window.dancers.length; i++) {
-      currentRadius = window.dancers[i].$node[0].clientTop;
+    for (var i = 0; i < dancersSorted.length; i++) {
+      currentRadius = dancersSorted[i].$node[0].clientTop;
       x += currentRadius;
-      window.dancers[i].setPosition(y, x);
+      dancersSorted[i].setPosition(y, x);
       x += currentRadius + xSpacerSize;
+
     }
 
   });
