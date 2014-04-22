@@ -8,13 +8,11 @@ BlinkyDancer.prototype = Object.create(Dancer.prototype);
 
 BlinkyDancer.prototype.constructor =  BlinkyDancer;
 
-BlinkyDancer.prototype.oldStep = Dancer.prototype.step;
-
 BlinkyDancer.prototype.blinkyTimeout = function(blinkyTime) {
   this.$node.toggleClass('lumosity');
   setTimeout(this.blinkyTimeout.bind(this, blinkyTime), blinkyTime);
 };
 
 BlinkyDancer.prototype.step = function() {
-  this.oldStep();
+  Dancer.prototype.step.call(this);
 };

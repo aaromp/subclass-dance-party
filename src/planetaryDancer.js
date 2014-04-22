@@ -2,6 +2,7 @@ var PlanetaryDancer = function(top, left, timeBetweenSteps, speed, direction, ro
   Dancer.call(this, top, left, timeBetweenSteps, speed, direction);
   this._rotateSpeed = rotateSpeed;
   this.$node.addClass('planet');
+  this.$node.addClass('patternMove');
 };
 
 PlanetaryDancer.prototype = Object.create(Dancer.prototype);

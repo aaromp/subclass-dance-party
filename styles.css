@@ -56,12 +56,13 @@ body, a:link, a:visited, a:active{
   border-color: #FFFB21;
 }
 .planet{
-  height: 20px;
-  width: 20px;
+  height: 50px;
+  width: 50px;
+  border-radius: 25px;
   border: 0;
 
   /* 2 3 4 5 6 7 8 7 */
-  background-image: -webkit-linear-gradient(left, green, blue, green);
+/*  background-image: -webkit-linear-gradient(left, green, blue, green);
 
   /*background-image: -webkit-linear-gradient(left,
   #c38268 0%, #c38268 15%,
@@ -73,6 +74,12 @@ body, a:link, a:visited, a:active{
   #343948 72%, #343948 82%,
   #756e81 82%, #756e81 100% );
   /*border-color: #965D2C;*/
+}
+.patternMove {
+  -webkit-animation-name: pattern-shift;
+  -webkit-animation-timing-function: linear;
+  -webkit-animation-duration: 2.5s;
+  -webkit-animation-iteration-count: infinite;
 }
 .star{
   border-color: #F7F7D5;
@@ -97,3 +104,198 @@ body, a:link, a:visited, a:active{
   border-width: 100px;
   border-radius: 100px;
 }
+
+@-webkit-keyframes pattern-shift {
+  0% {
+    /* 1 2 3 4 5 6 7 8 */
+    background-image: linear-gradient(75deg,
+    #c68e63,
+    #c38268,
+    #ae6d60,
+    #be737d,
+    #9f5f73,
+    #9a6c86,
+    #756e81,
+    #343948);
+  }
+  /*
+    background: linear-gradient(left,
+    #c68e63 0%, #c68e63 15%,
+    #c38268 15%, #c38268 29%,
+    #ae6d60 29%, #ae6d60 42%,
+    #be737d 42%, #be737d 52%,
+    #9f5f73 52%, #9f5f73 62%,
+    #9a6c86 62%, #9a6c86 72%,
+    #756e81 72%, #756e81 82%,
+    #343948 82%, #343948 100% );
+  }*/
+  7.14% {
+    /* 2 3 4 5 6 7 8 7 */
+    background-image: linear-gradient(75deg,
+    #c38268,
+    #ae6d60,
+    #be737d,
+    #9f5f73,
+    #9a6c86,
+    #756e81,
+    #343948,
+    #756e81 );
+  }
+  14.28% {
+    /* 3 4 5 6 7 8 7 6 */
+    background-image: linear-gradient(75deg,
+    #ae6d60,
+    #be737d,
+    #9f5f73,
+    #9a6c86,
+    #756e81,
+    #343948,
+    #756e81,
+    #9a6c86 );
+  }
+  21.42% {
+    /* 4 5 6 7 8 7 6 5 */
+    background-image: linear-gradient(75deg,
+    #be737d,
+    #9f5f73,
+    #9a6c86,
+    #756e81,
+    #343948,
+    #756e81,
+    #9a6c86,
+    #9f5f73 );
+  }
+  28.56% {
+    /* 5 6 7 8 7 6 5 4 */
+    background-image: linear-gradient(75deg,
+    #9f5f73,
+    #9a6c86,
+    #756e81,
+    #343948,
+    #756e81,
+    #9a6c86,
+    #9f5f73,
+    #be737d );
+  }
+  35.7% {
+    /* 6 7 8 7 6 5 4 3 */
+    background-image: linear-gradient(75deg,
+    #9a6c86,
+    #756e81,
+    #343948,
+    #756e81,
+    #9a6c86,
+    #9f5f73,
+    #be737d
+    #ae6d60 );
+  }
+  42.84% {
+    /* 7 8 7 6 5 4 3 2 */
+    background-image: linear-gradient(75deg,
+    #756e81,
+    #343948,
+    #756e81,
+    #9a6c86,
+    #9f5f73,
+    #be737d,
+    #ae6d60,
+    #c38268 );
+  }
+  49.98% {
+    /* 8 7 6 5 4 3 2 1 */
+    background-image: linear-gradient(75deg,
+    #343948,
+    #756e81,
+    #9a6c86,
+    #9f5f73,
+    #be737d,
+    #ae6d60,
+    #c38268,
+    #c68e63 );
+  }
+  57.12% {
+    /* 7 6 5 4 3 2 1 2 */
+    background-image: linear-gradient(75deg,
+    #756e81,
+    #9a6c86,
+    #9f5f73,
+    #be737d,
+    #ae6d60,
+    #c38268,
+    #c68e63,
+    #c38268 );
+  }
+  64.26% {
+    /* 6 5 4 3 2 1 2 3 */
+    background-image: linear-gradient(75deg,
+    #9a6c86,
+    #9f5f73,
+    #be737d,
+    #ae6d60,
+    #c38268,
+    #c68e63,
+    #c38268,
+    #ae6d60 );
+  }
+  71.4% {
+    /* 5 4 3 2 1 2 3 4 */
+    background-image: linear-gradient(75deg,
+    #9f5f73,
+    #be737d,
+    #ae6d60,
+    #c38268,
+    #c68e63,
+    #c38268,
+    #ae6d60,
+    #be737d );
+  }
+  78.54% {
+    /* 4 3 2 1 2 3 4 5 */
+    background-image: linear-gradient(75deg,
+    #be737d,
+    #ae6d60,
+    #c38268,
+    #c68e63,
+    #c38268,
+    #ae6d60,
+    #be737d,
+    #9f5f73 );
+  }
+  85.68% {
+    /* 3 2 1 2 3 4 5 6 */
+    background-image: linear-gradient(75deg,
+    #ae6d60,
+    #c38268,
+    #c68e63,
+    #c38268,
+    #ae6d60,
+    #be737d,
+    #9f5f73,
+    #9a6c86 );
+  }
+  92.82% {
+    /* 2 1 2 3 4 5 6 7 */
+    background-image: linear-gradient(75deg,
+    #c38268,
+    #c68e63,
+    #c38268,
+    #ae6d60,
+    #be737d,
+    #9f5f73,
+    #9a6c86,
+    #756e81 );
+  }
+  100% {
+    /* 1 2 3 4 5 6 7 8 */
+    background-image: linear-gradient(75deg,
+    #c68e63,
+    #c38268,
+    #ae6d60,
+    #be737d,
+    #9f5f73,
+    #9a6c86,
+    #756e81,
+    #343948 );
+  }
+}
+
