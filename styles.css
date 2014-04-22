@@ -56,7 +56,23 @@ body, a:link, a:visited, a:active{
   border-color: #FFFB21;
 }
 .planet{
-  border-color: #965D2C;
+  height: 20px;
+  width: 20px;
+  border: 0;
+
+  /* 2 3 4 5 6 7 8 7 */
+  background-image: -webkit-linear-gradient(left, green, blue, green);
+
+  /*background-image: -webkit-linear-gradient(left,
+  #c38268 0%, #c38268 15%,
+  #ae6d60 15%, #ae6d60 29%,
+  #be737d 29%, #be737d 42%,
+  #9f5f73 42%, #9f5f73 52%,
+  #9a6c86 52%, #9a6c86 62%,
+  #756e81 62%, #756e81 72%,
+  #343948 72%, #343948 82%,
+  #756e81 82%, #756e81 100% );
+  /*border-color: #965D2C;*/
 }
 .star{
   border-color: #F7F7D5;

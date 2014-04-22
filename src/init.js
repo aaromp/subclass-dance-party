@@ -3,6 +3,13 @@ $(document).ready(function(){
 
   $('.lineUp').on("click", function(event) {
     // return if windowdancers.length === 0
+    // change dancers speed to 0
+
+    setTimeout(function(){}, 5000);
+
+    for (var i = 0; i < window.dancers.length; i++) {
+      window.dancers[i]._speed = 0;
+    }
 
     window.dancers.sort(function(a, b) {
       return b.$node[0].clientTop - a.$node[0].clientTop;
@@ -18,6 +25,7 @@ $(document).ready(function(){
         index += i;
       }
       dancersSorted[index] = window.dancers[i];
+
     }
 
     console.log(dancersSorted);
@@ -48,12 +56,12 @@ $(document).ready(function(){
       console.log(dancersSorted[i].$node.position());
       var changeX = x - dancersSorted[i].$node.position().left - dancersSorted[i].$node[0].clientTop;
       var changeY = y - dancersSorted[i].$node.position().top - dancersSorted[i].$node[0].clientTop;
+      dancersSorted[i].left = x;
+      dancersSorted[i].top = y;
       dancersSorted[i].$node.animate({
         left: "+="+changeX,
         top: "+="+changeY
       }, 5000, function(){
-        // dancersSorted[i].left = x - changeX;
-        // dancersSorted[i].top = y - changeY;
       });
       x += currentRadius + xSpacerSize;
 
@@ -91,7 +99,9 @@ $(document).ready(function(){
     var dancer = new dancerMakerFunction(
       event.pageY,
       event.pageX,
-      Math.random() * 1000
+      20,//Math.random() * 1000,
+      Math.random()*5,
+      Math.random()*Math.PI*2
     );
 
     $('body').append(dancer.$node);

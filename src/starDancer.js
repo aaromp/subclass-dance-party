@@ -1,5 +1,5 @@
-var StarDancer = function(top, left, timeBetweenSteps) {
-  BlinkyDancer.call(this, top, left, timeBetweenSteps);
+var StarDancer = function(top, left, timeBetweenSteps, speed, direction) {
+  BlinkyDancer.call(this, top, left, timeBetweenSteps, speed, direction);
   var properties = _.zip(this.colors, this.borderSize, this.gravity);
   var index = Math.floor(Math.random()*properties.length);
   this._color = properties[index][0];
