@@ -43,7 +43,14 @@ $(document).ready(function(){
     for (var i = 0; i < dancersSorted.length; i++) {
       currentRadius = dancersSorted[i].$node[0].clientTop;
       x += currentRadius;
-      dancersSorted[i].setPosition(y, x);
+      // slowly have stars animate to their correct spot
+      // dancersSorted[i].setPosition(y, x);
+      var changeX = x - dancersSorted[i].left;
+      var changeY = y - dancersSorted[i].top;
+      dancersSorted[i].$node.animate({
+        left: "+="+changeX,
+        top: "+="+changeY
+      }, 10000, function(){});
       x += currentRadius + xSpacerSize;
 
     }
