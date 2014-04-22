@@ -11,7 +11,7 @@ PlanetaryDancer.prototype.oldStep = Dancer.prototype.step;
 
 PlanetaryDancer.prototype.rotate = function() {
   // Placeholder
-  return rotateSpeed;
+  return this.rotateSpeed;
 };
 
 PlanetaryDancer.prototype.step = function() {

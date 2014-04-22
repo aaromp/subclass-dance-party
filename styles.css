@@ -4,6 +4,7 @@ body, html{
 body{
   margin: 0px;
   background-color:#444;
+  background-image: url('hd-space-wallpaper.jpg');
   font-size: 18px;
 }
 body, a:link, a:visited, a:active{
@@ -24,4 +25,41 @@ body, a:link, a:visited, a:active{
   border:10px solid red;
   border-radius:10px;
   position:absolute;
+}
+.planet{
+  border-color: #965D2C;
+}
+.star{
+  border-color: #F7F7D5;
+  background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+  linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+  linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7));
+}
+.white{
+  border-color: #FAFAF5;
+}
+.yellow{
+  border-color: #FFFB21;
+}
+.orange{
+  border-color: #E08216;
+}
+.red{
+  border-color: #FC0313;
+}
+.small{
+  border-width: 5px;
+  border-radius: 5px;
+}
+.medium{
+  border-width: 15px;
+  border-radius: 15px;
+}
+.large{
+  border-width: 25px;
+  border-radius: 25px;
+}
+.giant{
+  border-width: 100px;
+  border-radius: 100px;
 }
