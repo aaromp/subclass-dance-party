@@ -10,5 +10,5 @@ BlinkyDancer.prototype.oldStep = Dancer.prototype.step;
 
 BlinkyDancer.prototype.step = function() {
   this.oldStep();
-  this.$node.toggle();
+  this.$node.toggleClass('lumosity');
 };

@@ -12,10 +12,19 @@
   </head>
   <body>
     <div class="topbar">
-      <span class="title">object dance party</span>
-      <a href="#" class="addDancerButton" data-dancer-maker-function-name="BlinkyDancer">add a blinky dancer</a>
+      <span class="title">Planetary Jam</span>
+      <form action="addADancer">
+      <input type="radio" name="dancer" value="blinky" data-dancer-maker-function-name="BlinkyDancer">add a blinky dancer</a>
+      <input type="radio" name="dancer" value="planet" data-dancer-maker-function-name="PlanetaryDancer">add a planetary dancer</a>
+      <input type="radio" name="dancer" value="star" checked data-dancer-maker-function-name="StarDancer">add a star dancer</a>
+      </form>
+      <!--<a href="#" class="addDancerButton" data-dancer-maker-function-name="BlinkyDancer">add a blinky dancer</a>
       <a href="#" class="addDancerButton" data-dancer-maker-function-name="PlanetaryDancer">add a planetary dancer</a>
-      <a href="#" class="addDancerButton" data-dancer-maker-function-name="StarDancer">add a star dancer</a>    </div>
+      <a href="#" class="addDancerButton" data-dancer-maker-function-name="StarDancer">add a star dancer</a>-->
+    </div>
+    <div class="universe">
+
+    </div>
     <script src="src/init.js"></script>
   </body>
 </html>

@@ -22,18 +22,23 @@ body, a:link, a:visited, a:active{
   background-color: #777;
 }
 .dancer{
-  border:10px solid red;
+  border:10px solid;
   border-radius:10px;
+
   position:absolute;
+}
+.lumosity{
+  background: rgba(255,255,255,1);
+  box-shadow:0 2px 10px rgba(255,255,255,0.8),
+             0 5px 50px rgba(255,255,255,0.8),
+             0 8px 80px rgba(255,255,255,0.6),
+             0 8px 120px rgba(255,255,255,0.6);
 }
 .planet{
   border-color: #965D2C;
 }
 .star{
   border-color: #F7F7D5;
-  background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
-  linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
-  linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7));
 }
 .white{
   border-color: #FAFAF5;
