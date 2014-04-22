@@ -1,9 +1,9 @@
 var StarDancer = function(top, left, timeBetweenSteps) {
+  BlinkyDancer.call(this, top, left, timeBetweenSteps);
   var properties = _.zip(this.colors, this.borderSize, this.gravity);
   var index = Math.floor(Math.random()*properties.length);
   this._color = properties[index][0];
   this._borderSize = properties[index][1];
-  BlinkyDancer.call(this, top - radius, left - radius, timeBetweenSteps);
   this._gravity = properties[index][2];
   this.setColor();
 };
