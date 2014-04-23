@@ -8,9 +8,6 @@ var Dancer = function(top, left, timeBetweenSteps, speed, direction) {
   this.step();
   this.setPosition(top, left);
   this._mass = null;
-
-  var windowHeight = $("body").height();
-  var windowWidth = $("body").width();
 };
 
 Dancer.prototype.lineUp = function(destX, destY) {
@@ -36,13 +33,15 @@ Dancer.prototype.stopLineUp= function(destX, destY) {
 };
 
 Dancer.prototype.step = function() {
-  if (this.left + this.$node[0].clientLeft > $("body").width() ||
-      this.left - this.$node[0].clientLeft < 0) {
-    this._direction = (3*Math.PI - this._direction) % (2 * Math.PI);
-  }
-  if (this.top + this.$node[0].clientTop > $("body").height() ||
-      this.top - this.$node[0].clientTop < $(".topbar").height()) {
-    this._direction = (2*Math.PI - this._direction) % (2 * Math.PI);
+  if (this.$node.hasClass('bullet') === false) {
+    if (this.left + this.$node[0].clientLeft > $("body").width() ||
+        this.left - this.$node[0].clientLeft < 0) {
+      this._direction = (3*Math.PI - this._direction) % (2 * Math.PI);
+    }
+    if (this.top + this.$node[0].clientTop > $("body").height() ||
+        this.top - this.$node[0].clientTop < $(".topbar").height()) {
+      this._direction = (2*Math.PI - this._direction) % (2 * Math.PI);
+    }
   }
 
   this.top -= this._speed*Math.sin(this._direction);

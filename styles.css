@@ -46,6 +46,23 @@ body, a:link, a:visited, a:active{
   -webkit-transform: translate(-50%, -50%);
   position:absolute;
 }
+.DEATHSTAR{
+  border: 0;
+  height: 30px;
+  width: 30px;
+  border-radius: 15px;
+  background-color: gray;
+  -webkit-transform: translate(-50%, -50%);
+  position: absolute;
+}
+.bullet{
+  border: 1px solid green;
+  height: 1px;
+  width: 60px;
+  background-color: green;
+  -webkit-transform: translate(-100%,-100%);
+  position: absolute;
+}
 .lumosity{
   background: rgba(255,255,255,1);
   box-shadow:0 2px 10px rgba(255,255,255,0.8),

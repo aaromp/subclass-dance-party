@@ -1,16 +1,17 @@
 $(document).ready(function(){
   window.dancers = [];
+  window.death;
 
-  $('.lineUp').on("click", function(event) {
+  $(document).keyup( function(event) {
+    for (var i = 0; i < window.dancers.length; i++) {
+      window.death.shoot(window.dancers[i]);
+    }
+    console.log("shootin dis");
+  });
+
+  $(".lineUp").on("click", function(event) {
     // return if windowdancers.length === 0
     // change dancers speed to 0
-
-    setTimeout(function(){}, 5000);
-    /*
-    for (var i = 0; i < window.dancers.length; i++) {
-      window.dancers[i]._speed = 0;
-    }
-    */
 
     window.dancers.sort(function(a, b) {
       return b.$node[0].clientTop - a.$node[0].clientTop;
@@ -53,28 +54,7 @@ $(document).ready(function(){
       currentRadius = dancersSorted[i].$node[0].clientTop;
       x += currentRadius;
       dancersSorted[i].lineUp(x,y);
-      // slowly have stars animate to their correct spot
-      // dancersSorted[i].setPosition(y, x);
-      /*
-
-      console.log(dancersSorted[i].$node.position());
-      var changeX = x - dancersSorted[i].$node.position().left - dancersSorted[i].$node[0].clientTop;
-      var changeY = y - dancersSorted[i].$node.position().top - dancersSorted[i].$node[0].clientTop;
-      //dancersSorted[i].left = x;
-      //dancersSorted[i].top = y;
-      dancersSorted[i].$node.animate({
-        left: "+="+changeX,
-        top: "+="+changeY
-      }, {duration: 5000,
-        progress: function() {
-          debugger;
-          dancersSorted[i].left = dancersSorted[i].$node.position().left;
-          dancersSorted[i].top = dancersSorted[i].$node.position().top
-        }
-      });
-*/
       x += currentRadius + xSpacerSize;
-
     }
 
   });
@@ -101,11 +81,14 @@ $(document).ready(function(){
       correctFunction = $("[value='planet']").data("dancer-maker-function-name");
     } else if ($("[value='star']").is(":checked")) {
       correctFunction = $("[value='star']").data("dancer-maker-function-name");
+    } else if ($("[value='DEATHSTAR']").is(":checked")) {
+      correctFunction = $("[value='DEATHSTAR']").data("dancer-maker-function-name");
     }
 
     // get the maker function for the kind of dancer we're supposed to make
     var dancerMakerFunction = window[correctFunction];
     // make a dancer at mouse click
+
     var dancer = new dancerMakerFunction(
       event.pageY,
       event.pageX,
@@ -115,7 +98,13 @@ $(document).ready(function(){
     );
 
     $('body').append(dancer.$node);
-    window.dancers.push(dancer);
+
+    if (!dancer.$node.hasClass('DEATHSTAR')){
+      window.dancers.push(dancer);
+    } else if (dancer.$node.hasClass('DEATHSTAR') === true) {
+      console.log("we've got death star");
+      window.death = dancer;
+    }
   });
 });
 
