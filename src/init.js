@@ -6,10 +6,11 @@ $(document).ready(function(){
     // change dancers speed to 0
 
     setTimeout(function(){}, 5000);
-
+    /*
     for (var i = 0; i < window.dancers.length; i++) {
       window.dancers[i]._speed = 0;
     }
+    */
 
     window.dancers.sort(function(a, b) {
       return b.$node[0].clientTop - a.$node[0].clientTop;
@@ -51,18 +52,27 @@ $(document).ready(function(){
     for (var i = 0; i < dancersSorted.length; i++) {
       currentRadius = dancersSorted[i].$node[0].clientTop;
       x += currentRadius;
+      dancersSorted[i].lineUp(x,y);
       // slowly have stars animate to their correct spot
       // dancersSorted[i].setPosition(y, x);
+      /*
+
       console.log(dancersSorted[i].$node.position());
       var changeX = x - dancersSorted[i].$node.position().left - dancersSorted[i].$node[0].clientTop;
       var changeY = y - dancersSorted[i].$node.position().top - dancersSorted[i].$node[0].clientTop;
-      dancersSorted[i].left = x;
-      dancersSorted[i].top = y;
+      //dancersSorted[i].left = x;
+      //dancersSorted[i].top = y;
       dancersSorted[i].$node.animate({
         left: "+="+changeX,
         top: "+="+changeY
-      }, 5000, function(){
+      }, {duration: 5000,
+        progress: function() {
+          debugger;
+          dancersSorted[i].left = dancersSorted[i].$node.position().left;
+          dancersSorted[i].top = dancersSorted[i].$node.position().top
+        }
       });
+*/
       x += currentRadius + xSpacerSize;
 
     }
